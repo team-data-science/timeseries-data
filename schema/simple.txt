@@ -1,0 +1,20 @@
+// Creating very simple table
+// I used dbdiagram.io for this
+
+Table Measurement as M {
+  id int  [pk]
+  ts Timestamp 
+  station varchar
+  PM2dot5 double // can't use dots as column names
+  PM10 double
+  SO2 double
+  NO2 double
+  CO double
+  O3 double
+  TEMP double
+  PRES double
+  DEWP double
+  RAIN double
+  wd varchar
+  WSPM double
+}
