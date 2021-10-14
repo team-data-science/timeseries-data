@@ -41,13 +41,13 @@ datatags = ['station','wd']
 
 client = influxdb_client.InfluxDBClient(
    url='http://localhost:8086',
-   token='0Sax_4JZUtLkfEW0SWuXm5FwkKF4t-OHT7N3lBbYXfNGCVBalj1yi4wt1z08IwOqKfMDy844szSFSnZc-_kvGA==',
+   token='lTUKuRE46dJw8Yj_AmYtQHELsnfNM1eGVdJkYUj_Q_Ddq7yqCScDlbt9PYdu-RR_OW-NX9S_GaxNqXz7iAECCw==',
    org='my-org'
 )
 
 #Write the data with two tags
 write_api = client.write_api(write_options=SYNCHRONOUS)
-message = write_api.write(bucket='air_quality',org='my-org',record = ex_df, data_frame_measurement_name = 'full-tags', data_frame_tag_columns=['station','wd'])
+message = write_api.write(bucket='air-quality',org='my-org',record = ex_df, data_frame_measurement_name = 'location-tag-only', data_frame_tag_columns=['station','wd'])
 print(message)
 
 write_api.flush()

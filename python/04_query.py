@@ -6,14 +6,14 @@ import influxdb_client.client.influxdb_client
 
 client = influxdb_client.InfluxDBClient(
    url='http://localhost:8086',
-   token='0Sax_4JZUtLkfEW0SWuXm5FwkKF4t-OHT7N3lBbYXfNGCVBalj1yi4wt1z08IwOqKfMDy844szSFSnZc-_kvGA==',
+   token='lTUKuRE46dJw8Yj_AmYtQHELsnfNM1eGVdJkYUj_Q_Ddq7yqCScDlbt9PYdu-RR_OW-NX9S_GaxNqXz7iAECCw==',
    org='my-org'
 )
 
 queryAPI = client.query_api()
 
 #create flux query
-myquery_location = 'from(bucket: "air_quality") |> range(start: 2013-03-25T00:00:00Z, stop: 2013-05-01T00:00:00Z)' \
+myquery_location = 'from(bucket: "air-quality") |> range(start: 2013-03-25T00:00:00Z, stop: 2013-05-01T00:00:00Z)' \
             '|> filter(fn: (r) => r["_measurement"] == "location-tag-only")' \
             '|> filter(fn: (r) => r["_field"] == "TEMP")' 
 
@@ -23,7 +23,7 @@ print(location_df.info())
 print(location_df)
 
 
-myquery_everything = 'from(bucket: "air_quality") |> range(start: 2013-03-25T00:00:00Z, stop: 2013-05-01T00:00:00Z)' \
+myquery_everything = 'from(bucket: "air-quality") |> range(start: 2013-03-25T00:00:00Z, stop: 2013-05-01T00:00:00Z)' \
             '|> filter(fn: (r) => r["_measurement"] == "full-tags")' \
             '|> filter(fn: (r) => r["_field"] == "TEMP")' 
 

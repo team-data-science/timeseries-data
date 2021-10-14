@@ -6,9 +6,9 @@ import influxdb_client
 from influxdb_client.client.write_api import SYNCHRONOUS
 
 # Read the csv into a dataframe
-df = pd.read_csv("data/test.csv", )
+#df = pd.read_csv("data/test.csv", )
 
-#df = pd.read_csv("data/PRSA_Data_Aotizhongxin_20130301-20170228.csv", )
+df = pd.read_csv("data/PRSA_Data_Aotizhongxin_20130301-20170228.csv", )
 
 
 # create a timestamp out of the four columns
@@ -31,7 +31,7 @@ datatags = ['station','wd']
 
 client = influxdb_client.InfluxDBClient(
    url='http://localhost:8086',
-   token='GDKdsPNBwiuBbmGLkSJtCxhOm7P4g5i3MTPUYvhPRf78yThajnDDveUmbdi9Lue-WaRjG6QItH0BnGFoFGmUZQ==',
+   token='lTUKuRE46dJw8Yj_AmYtQHELsnfNM1eGVdJkYUj_Q_Ddq7yqCScDlbt9PYdu-RR_OW-NX9S_GaxNqXz7iAECCw==',
    org='my-org'
 )
 
