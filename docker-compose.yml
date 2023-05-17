@@ -28,4 +28,4 @@ services:
       - INFLUXDB_USERNAME=user
       - INFLUXDB_PASSWORD=user12345
     volumes:
-      - ./gfdata:/var/lib/grafana
+      - ./gfdata:/var/lib/root
